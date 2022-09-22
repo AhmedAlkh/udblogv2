@@ -25,6 +25,8 @@ const postSchema = {
   content: String
 };
 
+const Post = mongoose.model("Post", postSchema);
+
 let posts = [];
 
 app.get("/", function(req, res){

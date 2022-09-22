@@ -63,10 +63,11 @@ app.post("/compose", function(req, res){
 
   // posts.push(post);
   // No longer need to push posts to array, now we save to database
-  post.save();
-
-  res.redirect("/");
-
+  post.save(function(err){
+    if(!err) {
+      res.redirect("/");
+    }
+  });
 });
 
 app.get("/posts/:postName", function(req, res){

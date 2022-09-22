@@ -60,7 +60,9 @@ app.post("/compose", function(req, res){
     content: req.body.postBody
   });
 
-  posts.push(post);
+  // posts.push(post);
+  // No longer need to push posts to array, now we save to database
+  post.save();
 
   res.redirect("/");
 
